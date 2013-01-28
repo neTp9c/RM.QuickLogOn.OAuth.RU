@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FA47F86C-E838-4C6D-A300-230648BD909F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RM.QuickLogOn.OAuth.RU</RootNamespace>
+    <AssemblyName>RM.QuickLogOn.OAuth.RU</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Orchard.Core">
+      <HintPath>..\..\bin\Orchard.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Orchard.Framework">
+      <HintPath>..\..\bin\Orchard.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\OdnoklassnikiOAuthController.cs" />
+    <Compile Include="Controllers\VKontakteOAuthController.cs" />
+    <Compile Include="Controllers\YandexOAuthController.cs" />
+    <Compile Include="Controllers\MailRuOAuthController.cs" />
+    <Compile Include="Drivers\YandexSettingsPartDriver.cs" />
+    <Compile Include="Drivers\VKontakteSettingsPartDriver.cs" />
+    <Compile Include="Drivers\OdnoklassnikiSettingsPartDriver.cs" />
+    <Compile Include="Drivers\MailRuSettingsPartDriver.cs" />
+    <Compile Include="Handlers\YandexSettingsPartHandler.cs" />
+    <Compile Include="Handlers\VKontakteSettingsPartHandler.cs" />
+    <Compile Include="Handlers\OdnoklassnikiSettingsPartHandler.cs" />
+    <Compile Include="Handlers\MailRuSettingsPartHandler.cs" />
+    <Compile Include="Migrations.cs" />
+    <Compile Include="Models\YandexSettingsPartRecord.cs" />
+    <Compile Include="Models\VKontakteSettingsPartRecord.cs" />
+    <Compile Include="Models\OdnoklassnikiSettingsPartRecord.cs" />
+    <Compile Include="Models\YandexSettingsPart.cs" />
+    <Compile Include="Models\VKontakteSettingsPart.cs" />
+    <Compile Include="Models\OdnoklassnikiSettingsPart.cs" />
+    <Compile Include="Models\MailRuSettingsPart.cs" />
+    <Compile Include="Models\MailRuSettingsPartRecord.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\YandexOAuthProvider.cs" />
+    <Compile Include="Providers\VKontakteOAuthProvider.cs" />
+    <Compile Include="Providers\OdnoklassnikiOAuthProvider.cs" />
+    <Compile Include="Providers\MailRuOAuthProvider.cs" />
+    <Compile Include="Routes.cs" />
+    <Compile Include="Services\YandexOAuthService.cs" />
+    <Compile Include="Services\VKontakteOAuthService.cs" />
+    <Compile Include="Services\OdnoklassnikiOAuthService.cs" />
+    <Compile Include="Services\MailRuOAuthService.cs" />
+    <Compile Include="Services\OAuthHelper.cs" />
+    <Compile Include="ViewModels\YandexEmailAddressJsonViewModel.cs" />
+    <Compile Include="ViewModels\YandexAccessTokenJsonModel.cs" />
+    <Compile Include="ViewModels\YandexOAuthAuthViewModel.cs" />
+    <Compile Include="ViewModels\VKontakteOAuthAuthViewModel.cs" />
+    <Compile Include="ViewModels\OdnoklassnikiOAuthAuthViewModel.cs" />
+    <Compile Include="ViewModels\MailRuAccessTokenJsonModel.cs" />
+    <Compile Include="ViewModels\MailRuEmailAddressJsonViewModel.cs" />
+    <Compile Include="ViewModels\MailRuOAuthAuthViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Module.txt" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Placement.info" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RM.QuickLogOn\RM.QuickLogOn.csproj">
+      <Project>{809C09ED-F637-4C25-8AD6-65E4775E8DFE}</Project>
+      <Name>RM.QuickLogOn</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\EditorTemplates\Parts.MailRu.SiteSettings.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\EditorTemplates\Parts.Odnoklassniki.SiteSettings.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\EditorTemplates\Parts.Yandex.SiteSettings.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\EditorTemplates\Parts.VKontakte.SiteSettings.cshtml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

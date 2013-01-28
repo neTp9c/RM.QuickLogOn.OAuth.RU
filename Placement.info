@@ -1,0 +1,6 @@
+<Placement>
+  <Place Parts_MailRu_SiteSettings="Content:1"/>
+  <Place Parts_Yandex_SiteSettings="Content:2"/>
+  <Place Parts_VKontakte_SiteSettings="Content:3"/>
+  <Place Parts_Odnoklassniki_SiteSettings="Content:4"/>
+</Placement>

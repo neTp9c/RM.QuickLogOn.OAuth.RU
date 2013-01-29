@@ -2,8 +2,8 @@ Name: RM.QuickLogOn.OAuth.RU
 AntiForgery: enabled
 Author: Maxim Rich
 Website: http://www.richmaxim.com
-Version: 1.0.1
-OrchardVersion: 1.5
+Version: 1.0.2
+OrchardVersion: 1.6
 Dependencies: RM.QuickLogOn
 Category: Security
 Description: Set of Quick LogOn OAuth providers from RUnet. Mail.Ru, Yandex, VKontakte and Odnoklassniki are available at this time.

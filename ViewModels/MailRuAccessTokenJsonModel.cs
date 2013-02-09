@@ -16,6 +16,9 @@ namespace RM.QuickLogOn.OAuth.RU.ViewModels
         public string expires_in { get; set; }
 
         [DataMember]
-        public string token_type { get; set; }
+        public string refresh_token { get; set; }
+
+        [DataMember]
+        public string x_mailru_vid { get; set; }
     }
 }

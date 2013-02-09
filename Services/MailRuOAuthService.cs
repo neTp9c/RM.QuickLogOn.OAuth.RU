@@ -29,7 +29,9 @@ namespace RM.QuickLogOn.OAuth.RU.Services
     public class MailRuOAuthService : IMailRuOAuthService
     {
         public const string TokenRequestUrl = "https://connect.mail.ru/oauth/token";
-        //public const string EmailRequestUrl = "https://www.googleapis.com/oauth2/v1/userinfo?access_token={0}";
+        public const string EmailRequestUrl = "http://www.appsmail.ru/platform/api?method=users.getInfo&secure=1&app_id={0}&session_key={1}&sig={2}";
+        public const string SigParams = "method=users.getInfosecure=1app_id={0}session_key={1}{2}";
+
 
         private readonly IQuickLogOnService _quickLogOnService;
         private readonly IEncryptionService _oauthHelper;
@@ -81,30 +83,40 @@ namespace RM.QuickLogOn.OAuth.RU.Services
             catch (Exception ex)
             {
                 var body = new StreamReader((ex as WebException).Response.GetResponseStream()).ReadToEnd();
-                Logger.Error(ex, ex.Message);
+                Logger.Error(ex, body);
             }
             
             return null;
         }
 
-        private string GetEmailAddress(string token)
+        private string GetEmailAddress(WorkContext wc, string token)
         {
-            //try
-            //{
-            //    var wr = WebRequest.Create(string.Format(EmailRequestUrl, token));
-            //    wr.Method = "GET";
-            //    wr.Proxy = _oauthHelper.GetProxy();
-            //    var wres = wr.GetResponse();
-            //    using (var stream = wres.GetResponseStream())
-            //    {
-            //        var result = _oauthHelper.FromJson<GoogleEmailAddressJsonViewModel>(stream);
-            //        return result != null && result.verified_email ? result.email : null;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Logger.Error(ex, ex.Message);
-            //}
+            try
+            {
+                var part = wc.CurrentSite.As<MailRuSettingsPart>();
+                var clientId = part.ClientId;
+                var clientSecret = _oauthHelper.Decrypt(part.Record.EncryptedClientSecret);
+
+                var sigParams = string.Format(SigParams, clientId, token, clientSecret);
+
+                var md5 = System.Security.Cryptography.MD5.Create();
+
+                var sig = string.Join(string.Empty, md5.ComputeHash(Encoding.UTF8.GetBytes(sigParams)).Select(x=>string.Format("{0:x2}", x)));
+
+                var wr = WebRequest.Create(string.Format(EmailRequestUrl, clientId, token, sig));
+                wr.Method = "GET";
+                wr.Proxy = OAuthHelper.GetProxy();
+                var wres = wr.GetResponse();
+                using (var stream = wres.GetResponseStream())
+                {
+                    var result = OAuthHelper.FromJson<MailRuEmailAddressJsonViewModel[]>(stream);
+                    return result != null && result.Any() ? result[0].email : null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex, ex.Message);
+            }
             return null;
         }
 
@@ -119,7 +131,7 @@ namespace RM.QuickLogOn.OAuth.RU.Services
                 var token = GetAccessToken(wc, code, returnUrl);
                 if (!string.IsNullOrEmpty(token))
                 {
-                    var email = GetEmailAddress(token);
+                    var email = GetEmailAddress(wc, token);
                     if (!string.IsNullOrEmpty(email))
                     {
                         return _quickLogOnService.LogOn(new QuickLogOnRequest

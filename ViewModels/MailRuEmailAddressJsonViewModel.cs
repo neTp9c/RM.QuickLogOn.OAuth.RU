@@ -11,8 +11,5 @@ namespace RM.QuickLogOn.OAuth.RU.ViewModels
     {
         [DataMember]
         public string email { get; set; }
-
-        [DataMember]
-        public bool verified_email { get; set; }
     }
 }

@@ -56,9 +56,7 @@ namespace RM.QuickLogOn.OAuth.RU.Services
                 var clientSecret = _oauthHelper.Decrypt(part.Record.EncryptedClientSecret);
 
                 var urlHelper = new UrlHelper(wc.HttpContext.Request.RequestContext);
-                var redirectUrl =
-                    new Uri(wc.HttpContext.Request.Url,
-                            urlHelper.Action("Auth", "MailRuOAuth", new { Area = "RM.QuickLogOn.OAuth" })).ToString(); //, ReturnUrl = returnUrl
+                var redirectUrl = new Uri(wc.HttpContext.Request.Url, urlHelper.Action("Auth", "MailRuOAuth", new { Area = "RM.QuickLogOn.OAuth.RU" })).ToString(); //, ReturnUrl = returnUrl.ToString()
 
                 var wr = WebRequest.Create(TokenRequestUrl);
                 wr.Proxy = OAuthHelper.GetProxy();
@@ -71,7 +69,7 @@ namespace RM.QuickLogOn.OAuth.RU.Services
                     ws.Write("client_secret={0}&", clientSecret);
                     ws.Write("grant_type=authorization_code&");
                     ws.Write("code={0}&", code);
-                    ws.Write("redirect_uri={0}", urlHelper.Encode(redirectUrl));
+                    ws.Write("redirect_uri={0}", redirectUrl);
                 }
                 var wres = wr.GetResponse();
                 using (var stream = wres.GetResponseStream())

@@ -30,7 +30,7 @@ namespace RM.QuickLogOn.OAuth.RU.Services
     {
         public const string TokenRequestUrl = "https://connect.mail.ru/oauth/token";
         public const string EmailRequestUrl = "http://www.appsmail.ru/platform/api?method=users.getInfo&secure=1&app_id={0}&session_key={1}&sig={2}";
-        public const string SigParams = "method=users.getInfosecure=1app_id={0}session_key={1}{2}";
+        public const string SigParams = "app_id={0}method=users.getInfosecure=1session_key={1}{2}";
 
 
         private readonly IQuickLogOnService _quickLogOnService;
@@ -56,14 +56,14 @@ namespace RM.QuickLogOn.OAuth.RU.Services
                 var clientSecret = _oauthHelper.Decrypt(part.Record.EncryptedClientSecret);
 
                 var urlHelper = new UrlHelper(wc.HttpContext.Request.RequestContext);
-                var redirectUrl = new Uri(wc.HttpContext.Request.Url, urlHelper.Action("Auth", "MailRuOAuth", new { Area = "RM.QuickLogOn.OAuth.RU" })).ToString(); //, ReturnUrl = returnUrl.ToString()
+                var redirectUrl = new Uri(wc.HttpContext.Request.Url, urlHelper.Action("Auth", "MailRuOAuth", new { Area = "RM.QuickLogOn.OAuth.RU", ReturnUrl = urlHelper.Encode(returnUrl.ToString()) })).ToString(); //
 
                 var wr = WebRequest.Create(TokenRequestUrl);
                 wr.Proxy = OAuthHelper.GetProxy();
                 wr.ContentType = "application/x-www-form-urlencoded";
                 wr.Method = "POST";
                 using (var stream = wr.GetRequestStream())
-                using (var ws = new StreamWriter(stream, Encoding.UTF8))
+                using (var ws = new StreamWriter(stream))
                 {
                     ws.Write("client_id={0}&", clientId);
                     ws.Write("client_secret={0}&", clientSecret);
@@ -113,7 +113,8 @@ namespace RM.QuickLogOn.OAuth.RU.Services
             }
             catch (Exception ex)
             {
-                Logger.Error(ex, ex.Message);
+                var body = new StreamReader((ex as WebException).Response.GetResponseStream()).ReadToEnd();
+                Logger.Error(ex, body);
             }
             return null;
         }

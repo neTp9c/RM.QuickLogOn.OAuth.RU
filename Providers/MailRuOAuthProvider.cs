@@ -33,7 +33,7 @@ namespace RM.QuickLogOn.OAuth.RU.Providers
             var part = context.CurrentSite.As<MailRuSettingsPart>();
             var clientId = part.ClientId;
             var returnUrl = context.HttpContext.Request.Url;
-            var redirectUrl = new Uri(returnUrl, urlHelper.Action("Auth", "MailRuOAuth", new { Area = "RM.QuickLogOn.OAuth.RU" })).ToString(); //, ReturnUrl = returnUrl.ToString()
+            var redirectUrl = new Uri(returnUrl, urlHelper.Action("Auth", "MailRuOAuth", new { Area = "RM.QuickLogOn.OAuth.RU", ReturnUrl = urlHelper.Encode(returnUrl.ToString()) })).ToString(); //
             return string.Format(Url, clientId, urlHelper.Encode(redirectUrl));
         }
     }

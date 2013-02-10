@@ -15,8 +15,8 @@ namespace RM.QuickLogOn.OAuth.RU.Providers
     [OrchardFeature("RM.QuickLogOn.OAuth.RU.VKontakte")]
     public class VKontakteOAuthProvider : IQuickLogOnProvider
     {
-        public const string Url = "https://accounts.google.com/o/oauth2/auth?response_type=code&client_id={0}&redirect_uri={1}&scope={2}&state={3}";
-        public const string Scope = "https://www.googleapis.com/auth/userinfo.email";
+        public const string Url = "https://oauth.vk.com/authorize?client_id={0}&redirect_uri={1}&response_type=code";
+        public const string Scope = "";
 
         public string Name
         {
@@ -34,8 +34,8 @@ namespace RM.QuickLogOn.OAuth.RU.Providers
             var part = context.CurrentSite.As<VKontakteSettingsPart>();
             var clientId = part.ClientId;
             var returnUrl = context.HttpContext.Request.Url;
-            var redirectUrl = new Uri(returnUrl, urlHelper.Action("Auth", "VKontakteOAuth", new { Area = "RM.QuickLogOn.OAuth.RU" })).ToString();
-            return string.Format(Url, clientId, urlHelper.Encode(redirectUrl), urlHelper.Encode(Scope), urlHelper.Encode(returnUrl.ToString()));
+            var redirectUrl = new Uri(returnUrl, urlHelper.Action("Auth", "VKontakteOAuth", new { Area = "RM.QuickLogOn.OAuth.RU", returnUrl = urlHelper.Encode(returnUrl.ToString()) })).ToString();
+            return string.Format(Url, clientId, urlHelper.Encode(redirectUrl)); // , urlHelper.Encode(returnUrl.ToString())
         }
     }
 }

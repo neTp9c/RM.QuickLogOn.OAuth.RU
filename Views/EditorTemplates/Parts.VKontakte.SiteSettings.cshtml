@@ -7,7 +7,7 @@
         <label for="@Html.FieldIdFor(m => m.ClientId)">@T("Client Id")</label>
         @Html.TextBoxFor(m=>m.ClientId)
         @Html.ValidationMessage("ClientId", "*")
-        <span class="hint">@T("You have to create VKontakte app to get ClientId.")&nbsp;<a href="https://code.google.com/apis/console">https://code.google.com/apis/console</a></span>
+        <span class="hint">@T("You have to create VKontakte app to get ClientId.")&nbsp;<a href="http://vk.com/developers.php?oid=-1&p=Auth">http://vk.com/developers.php?oid=-1&p=Auth</a></span>
     </div>
     <div>
         <label for="@Html.FieldIdFor(m => m.ClientSecret)">@T("Client Secret")</label>

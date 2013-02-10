@@ -9,6 +9,6 @@ namespace RM.QuickLogOn.OAuth.RU.ViewModels
     {
         public string Code { get; set; }
         public string Error { get; set; }
-        public string State { get; set; }
+        public string ReturnUrl { get; set; }
     }
 }

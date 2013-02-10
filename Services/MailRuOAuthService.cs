@@ -17,6 +17,7 @@ using RM.QuickLogOn.Providers;
 using RM.QuickLogOn.Services;
 using RM.QuickLogOn.OAuth.RU.Models;
 using RM.QuickLogOn.OAuth.RU.ViewModels;
+using System.Web;
 
 namespace RM.QuickLogOn.OAuth.RU.Services
 {
@@ -133,6 +134,7 @@ namespace RM.QuickLogOn.OAuth.RU.Services
                     var email = GetEmailAddress(wc, token);
                     if (!string.IsNullOrEmpty(email))
                     {
+                        returnUrl = HttpUtility.UrlDecode(returnUrl);
                         return _quickLogOnService.LogOn(new QuickLogOnRequest
                         {
                             Email = email,

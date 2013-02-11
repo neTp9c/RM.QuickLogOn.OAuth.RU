@@ -14,7 +14,7 @@ Features:
         Category: Security
 		Dependencies: RM.QuickLogOn
     RM.QuickLogOn.OAuth.RU.VKontakte:
-        Name: Quick LogOn with VKontakte OAuth [Coming soon]
+        Name: Quick LogOn with VKontakte OAuth
         Category: Security
 		Dependencies: RM.QuickLogOn
     RM.QuickLogOn.OAuth.RU.Odnoklassniki:

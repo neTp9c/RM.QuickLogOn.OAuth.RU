@@ -27,6 +27,7 @@ namespace RM.QuickLogOn.OAuth.RU
                 "OdnoklassnikiSettingsPartRecord",
                 table => table.ContentPartRecord()
                               .Column("ClientId", DbType.String, command => command.WithLength(255))
+                              .Column("ClientPublicId", DbType.String, command => command.WithLength(255))
                               .Column("EncryptedClientSecret", DbType.String, command => command.WithLength(512)));
             return 1;
         }

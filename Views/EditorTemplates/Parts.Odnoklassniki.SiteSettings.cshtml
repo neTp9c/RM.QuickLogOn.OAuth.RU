@@ -10,6 +10,12 @@
         <span class="hint">@T("You have to create Odnoklassniki app to get ClientId.")&nbsp;<a href="https://code.google.com/apis/console">https://code.google.com/apis/console</a></span>
     </div>
     <div>
+        <label for="@Html.FieldIdFor(m => m.ClientPublicId)">@T("Client Public Id")</label>
+        @Html.TextBoxFor(m=>m.ClientPublicId)
+        @Html.ValidationMessage("ClientPublicId", "*")
+        <span class="hint">@T("You have to create Odnoklassniki app to get ClientPublicId.")</span>
+    </div>
+    <div>
         <label for="@Html.FieldIdFor(m => m.ClientSecret)">@T("Client Secret")</label>
         @Html.PasswordFor(m=>m.ClientSecret)
         @Html.ValidationMessage("ClientSecret", "*")

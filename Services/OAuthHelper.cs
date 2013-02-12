@@ -11,11 +11,14 @@ using Orchard.Environment.Extensions;
 using Orchard.Localization;
 using Orchard.Logging;
 using Orchard.Security;
+using System.Security.Cryptography;
 
 namespace RM.QuickLogOn.OAuth.RU.Services
 {
     public static class OAuthHelper
     {
+        private static MD5 _md5 = MD5.Create();
+
         public static string Encrypt(this IEncryptionService service, string value)
         {
             return Convert.ToBase64String(service.Encode(Encoding.UTF8.GetBytes(value)));
@@ -30,6 +33,11 @@ namespace RM.QuickLogOn.OAuth.RU.Services
         {
             var js = new DataContractJsonSerializer(typeof(T));
             return js.ReadObject(stream) as T;
+        }
+
+        public static string HexMD5(string text)
+        {
+            return string.Join(string.Empty, _md5.ComputeHash(Encoding.UTF8.GetBytes(text)).Select(x => string.Format("{0:x2}", x)));
         }
 
         public static IWebProxy GetProxy()

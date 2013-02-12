@@ -2,7 +2,7 @@ Name: RM.QuickLogOn.OAuth.RU
 AntiForgery: enabled
 Author: Maxim Rich
 Website: http://www.richmaxim.com
-Version: 1.0.3
+Version: 1.0.4
 OrchardVersion: 1.6
 Dependencies: RM.QuickLogOn
 Category: Security
@@ -18,6 +18,6 @@ Features:
         Category: Security
 		Dependencies: RM.QuickLogOn
     RM.QuickLogOn.OAuth.RU.Odnoklassniki:
-        Name: Quick LogOn with Odnoklassniki OAuth [Coming soon]
+        Name: Quick LogOn with Odnoklassniki OAuth
         Category: Security
 		Dependencies: RM.QuickLogOn

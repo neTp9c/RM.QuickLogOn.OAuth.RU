@@ -33,7 +33,7 @@ namespace RM.QuickLogOn.OAuth.RU.Controllers
 
         public ActionResult Auth(OdnoklassnikiOAuthAuthViewModel model)
         {
-            var response = _oauthService.Auth(_services.WorkContext, model.Code, model.Error, model.State);
+            var response = _oauthService.Auth(_services.WorkContext, model.Code, model.Error, model.ReturnUrl);
             if (response.Error != null)
             {
                 _services.Notifier.Add(NotifyType.Error, response.Error);

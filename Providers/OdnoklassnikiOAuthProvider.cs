@@ -15,8 +15,7 @@ namespace RM.QuickLogOn.OAuth.RU.Providers
     [OrchardFeature("RM.QuickLogOn.OAuth.RU.Odnoklassniki")]
     public class OdnoklassnikiOAuthProvider : IQuickLogOnProvider
     {
-        public const string Url = "https://accounts.google.com/o/oauth2/auth?response_type=code&client_id={0}&redirect_uri={1}&scope={2}&state={3}";
-        public const string Scope = "https://www.googleapis.com/auth/userinfo.email";
+        public const string Url = "http://www.odnoklassniki.ru/oauth/authorize?client_id={0}&response_type=code&redirect_uri={1}";
 
         public string Name
         {
@@ -34,8 +33,9 @@ namespace RM.QuickLogOn.OAuth.RU.Providers
             var part = context.CurrentSite.As<OdnoklassnikiSettingsPart>();
             var clientId = part.ClientId;
             var returnUrl = context.HttpContext.Request.Url;
-            var redirectUrl = new Uri(returnUrl, urlHelper.Action("Auth", "OdnoklassnikiOAuth", new { Area = "RM.QuickLogOn.OAuth.RU" })).ToString();
-            return string.Format(Url, clientId, urlHelper.Encode(redirectUrl), urlHelper.Encode(Scope), urlHelper.Encode(returnUrl.ToString()));
+#warning Add returnUrl
+            var redirectUrl = new Uri(returnUrl, urlHelper.Action("Auth", "OdnoklassnikiOAuth", new { Area = "RM.QuickLogOn.OAuth.RU" })).ToString(); // , urlHelper.Encode(returnUrl.ToString())
+            return string.Format(Url, clientId, urlHelper.Encode(redirectUrl));
         }
     }
 }

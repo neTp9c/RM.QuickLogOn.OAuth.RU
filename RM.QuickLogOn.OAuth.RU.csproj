@@ -89,6 +89,8 @@
     <Compile Include="Services\OdnoklassnikiOAuthService.cs" />
     <Compile Include="Services\MailRuOAuthService.cs" />
     <Compile Include="Services\OAuthHelper.cs" />
+    <Compile Include="ViewModels\OdnoklassnikiAccessTokenJsonModel.cs" />
+    <Compile Include="ViewModels\OdnoklassnikiUserInfoJsonModel.cs" />
     <Compile Include="ViewModels\VKontakteAccessTokenJsonModel.cs" />
     <Compile Include="ViewModels\VKontakteUserInfoJsonViewModel.cs" />
     <Compile Include="ViewModels\YandexEmailAddressJsonViewModel.cs" />

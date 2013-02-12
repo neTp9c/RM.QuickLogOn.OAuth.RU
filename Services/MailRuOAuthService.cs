@@ -97,10 +97,9 @@ namespace RM.QuickLogOn.OAuth.RU.Services
                 var clientSecret = _oauthHelper.Decrypt(part.Record.EncryptedClientSecret);
 
                 var sigParams = string.Format(SigParams, clientId, token, clientSecret);
-
-                var md5 = System.Security.Cryptography.MD5.Create();
-
-                var sig = string.Join(string.Empty, md5.ComputeHash(Encoding.UTF8.GetBytes(sigParams)).Select(x=>string.Format("{0:x2}", x)));
+                //var md5 = System.Security.Cryptography.MD5.Create();
+                //var sig = string.Join(string.Empty, md5.ComputeHash(Encoding.UTF8.GetBytes(sigParams)).Select(x=>string.Format("{0:x2}", x)));
+                var sig = OAuthHelper.HexMD5(sigParams);
 
                 var wr = WebRequest.Create(string.Format(EmailRequestUrl, clientId, token, sig));
                 wr.Method = "GET";

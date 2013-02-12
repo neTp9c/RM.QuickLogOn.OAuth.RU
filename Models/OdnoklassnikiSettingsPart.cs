@@ -14,6 +14,9 @@ namespace RM.QuickLogOn.OAuth.RU.Models
         [Required(ErrorMessage = "Odnoklassniki ClientId is required")]
         public string ClientId { get { return Record.ClientId; } set { Record.ClientId = value; } }
 
+        [Required(ErrorMessage = "Odnoklassniki ClientPublicId is required")]
+        public string ClientPublicId { get { return Record.ClientPublicId; } set { Record.ClientPublicId = value; } }
+
         public string ClientSecret { get; set; }
     }
 }

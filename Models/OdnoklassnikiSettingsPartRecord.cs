@@ -11,6 +11,7 @@ namespace RM.QuickLogOn.OAuth.RU.Models
     public class OdnoklassnikiSettingsPartRecord : ContentPartRecord
     {
         public virtual string ClientId { get; set; }
+        public virtual string ClientPublicId { get; set; }
         public virtual string EncryptedClientSecret { get; set; }
     }
 }

@@ -9,6 +9,7 @@ using Orchard.Environment.Extensions;
 using RM.QuickLogOn.OAuth.RU.Models;
 using RM.QuickLogOn.Providers;
 using System.Web.Mvc;
+using Orchard.Localization;
 
 namespace RM.QuickLogOn.OAuth.RU.Providers
 {
@@ -17,14 +18,16 @@ namespace RM.QuickLogOn.OAuth.RU.Providers
     {
         public const string Url = "http://www.odnoklassniki.ru/oauth/authorize?client_id={0}&response_type=code&redirect_uri={1}";
 
+        private Localizer T = NullLocalizer.Instance;
+
         public string Name
         {
-            get { return "Odnoklassniki"; }
+            get { return T("Odnoklassniki").ToString(); }
         }
 
         public string Description
         {
-            get { return "LogOn with Your Odnoklassniki account"; }
+            get { return T("LogOn with Your Odnoklassniki account").ToString(); }
         }
 
         public string GetLogOnUrl(WorkContext context)

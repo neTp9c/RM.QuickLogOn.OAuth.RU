@@ -1,13 +1,21 @@
 ﻿@model RM.QuickLogOn.OAuth.RU.Models.VKontakteSettingsPart
 @using Orchard.Utility.Extensions;
-
+@{
+    var baseUri = new Uri(WorkContext.CurrentSite.BaseUrl);
+    var callbackUrl = new Uri(baseUri, Url.Action("Auth", "VKontakteOAuth", new { area = "RM.QuickLogOn.OAuth.RU" })).ToString();
+ }
 <fieldset>
     <legend>@T("VKontakte OAuth")</legend>
+    <ol style="list-style-type: decimal;padding-left: 20px;">
+        <li>@T("Setup or update existing VKontakte app:")&nbsp;<a href="http://vk.com/developers.php?oid=-1&p=Auth">http://vk.com/developers.php?oid=-1&p=Auth</a></li>
+        <li>@T("Put callback url to VKontakte app settings:")&nbsp;@Html.Link(callbackUrl, callbackUrl)</li>
+        <li>@T("Receive ClientId and ClientSecret from VKontakte app and put them into appropriate fields below")</li>
+    </ol>
     <div>
         <label for="@Html.FieldIdFor(m => m.ClientId)">@T("Client Id")</label>
         @Html.TextBoxFor(m=>m.ClientId)
         @Html.ValidationMessage("ClientId", "*")
-        <span class="hint">@T("You have to create VKontakte app to get ClientId.")&nbsp;<a href="http://vk.com/developers.php?oid=-1&p=Auth">http://vk.com/developers.php?oid=-1&p=Auth</a></span>
+        <span class="hint">@T("Enter client id.")</span>
     </div>
     <div>
         <label for="@Html.FieldIdFor(m => m.ClientSecret)">@T("Client Secret")</label>

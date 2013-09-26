@@ -1,13 +1,21 @@
 ﻿@model RM.QuickLogOn.OAuth.RU.Models.YandexSettingsPart
 @using Orchard.Utility.Extensions;
-
+@{
+    var baseUri = new Uri(WorkContext.CurrentSite.BaseUrl);
+    var callbackUrl = new Uri(baseUri, Url.Action("Auth", "YandexOAuth", new { area = "RM.QuickLogOn.OAuth.RU" })).ToString();
+ }
 <fieldset>
     <legend>@T("Yandex OAuth")</legend>
+    <ol style="list-style-type: decimal;padding-left: 20px;">
+        <li>@T("Setup or update existing Yandex app:")&nbsp;<a href="https://oauth.yandex.ru/client/new">https://oauth.yandex.ru/client/new</a></li>
+        <li>@T("Put callback url to Yandex app settings:")&nbsp;@Html.Link(callbackUrl, callbackUrl)</li>
+        <li>@T("Receive ClientId and ClientSecret from Yandex app and put them into appropriate fields below")</li>
+    </ol>
     <div>
         <label for="@Html.FieldIdFor(m => m.ClientId)">@T("Client Id")</label>
         @Html.TextBoxFor(m=>m.ClientId)
         @Html.ValidationMessage("ClientId", "*")
-        <span class="hint">@T("You have to create Yandex app to get ClientId.")&nbsp;<a href="https://oauth.yandex.ru/client/new">https://oauth.yandex.ru/client/new</a></span>
+        <span class="hint">@T("Enter client id.")</span>
     </div>
     <div>
         <label for="@Html.FieldIdFor(m => m.ClientSecret)">@T("Client Secret")</label>

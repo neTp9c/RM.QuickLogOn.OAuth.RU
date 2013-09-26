@@ -9,6 +9,7 @@ using Orchard.Environment.Extensions;
 using RM.QuickLogOn.OAuth.RU.Models;
 using RM.QuickLogOn.Providers;
 using System.Web.Mvc;
+using Orchard.Localization;
 
 namespace RM.QuickLogOn.OAuth.RU.Providers
 {
@@ -18,14 +19,16 @@ namespace RM.QuickLogOn.OAuth.RU.Providers
         public const string Url = "https://oauth.vk.com/authorize?client_id={0}&redirect_uri={1}&response_type=code";
         public const string Scope = "";
 
+        private Localizer T = NullLocalizer.Instance;
+
         public string Name
         {
-            get { return "VKontakte"; }
+            get { return T("VKontakte").ToString(); }
         }
 
         public string Description
         {
-            get { return "LogOn with Your VKontakte account"; }
+            get { return T("LogOn with Your VKontakte account").ToString(); }
         }
 
         public string GetLogOnUrl(WorkContext context)

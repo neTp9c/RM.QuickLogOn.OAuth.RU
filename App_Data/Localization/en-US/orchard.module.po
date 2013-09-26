@@ -1,0 +1,370 @@
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Module.txt
+#| msgid "Name"
+msgid "RM.QuickLogOn.OAuth.RU"
+msgstr "RM.QuickLogOn.OAuth.RU"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Module.txt
+#| msgid "Author"
+msgid "Maxim Rich"
+msgstr "Maxim Rich"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Module.txt
+#| msgid "Website"
+msgid "http://www.richmaxim.com"
+msgstr "http://www.richmaxim.com"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Module.txt
+#| msgid "Description"
+msgid "Set of Quick LogOn OAuth providers from RUnet. Mail.Ru, Yandex, VKontakte and Odnoklassniki are available at this time."
+msgstr "Set of Quick LogOn OAuth providers from RUnet. Mail.Ru, Yandex, VKontakte and Odnoklassniki are available at this time."
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Module.txt
+#| msgid "RM.QuickLogOn.OAuth.RU.Yandex.Name"
+msgid "Quick LogOn with Yandex OAuth"
+msgstr "Quick LogOn with Yandex OAuth"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Module.txt
+#| msgid "RM.QuickLogOn.OAuth.RU.Yandex.Category"
+msgid "Security"
+msgstr "Security"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Module.txt
+#| msgid "RM.QuickLogOn.OAuth.RU.VKontakte.Name"
+msgid "Quick LogOn with VKontakte OAuth"
+msgstr "Quick LogOn with VKontakte OAuth"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Module.txt
+#| msgid "RM.QuickLogOn.OAuth.RU.VKontakte.Category"
+msgid "Security"
+msgstr "Security"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Module.txt
+#| msgid "RM.QuickLogOn.OAuth.RU.Odnoklassniki.Name"
+msgid "Quick LogOn with Odnoklassniki OAuth"
+msgstr "Quick LogOn with Odnoklassniki OAuth"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Module.txt
+#| msgid "RM.QuickLogOn.OAuth.RU.Odnoklassniki.Category"
+msgid "Security"
+msgstr "Security"
+
+#: RM.QuickLogOn.OAuth.RU.Handlers.MailRuSettingsPartHandler
+#| msgid "QuickLogOn.RU"
+msgid "QuickLogOn.RU"
+msgstr "QuickLogOn.RU"
+
+#: RM.QuickLogOn.OAuth.RU.Handlers.OdnoklassnikiSettingsPartHandler
+#| msgid "QuickLogOn.RU"
+msgid "QuickLogOn.RU"
+msgstr "QuickLogOn.RU"
+
+#: RM.QuickLogOn.OAuth.RU.Handlers.VKontakteSettingsPartHandler
+#| msgid "QuickLogOn.RU"
+msgid "QuickLogOn.RU"
+msgstr "QuickLogOn.RU"
+
+#: RM.QuickLogOn.OAuth.RU.Handlers.YandexSettingsPartHandler
+#| msgid "QuickLogOn.RU"
+msgid "QuickLogOn.RU"
+msgstr "QuickLogOn.RU"
+
+#: RM.QuickLogOn.OAuth.RU.Providers.MailRuOAuthProvider
+#| msgid "MailRu"
+msgid "MailRu"
+msgstr "MailRu"
+
+#: RM.QuickLogOn.OAuth.RU.Providers.MailRuOAuthProvider
+#| msgid "LogOn with Your Mail.RU account"
+msgid "LogOn with Your Mail.RU account"
+msgstr "LogOn with Your Mail.RU account"
+
+#: RM.QuickLogOn.OAuth.RU.Providers.OdnoklassnikiOAuthProvider
+#| msgid "Odnoklassniki"
+msgid "Odnoklassniki"
+msgstr "Odnoklassniki"
+
+#: RM.QuickLogOn.OAuth.RU.Providers.OdnoklassnikiOAuthProvider
+#| msgid "LogOn with Your Odnoklassniki account"
+msgid "LogOn with Your Odnoklassniki account"
+msgstr "LogOn with Your Odnoklassniki account"
+
+#: RM.QuickLogOn.OAuth.RU.Providers.VKontakteOAuthProvider
+#| msgid "VKontakte"
+msgid "VKontakte"
+msgstr "VKontakte"
+
+#: RM.QuickLogOn.OAuth.RU.Providers.VKontakteOAuthProvider
+#| msgid "LogOn with Your VKontakte account"
+msgid "LogOn with Your VKontakte account"
+msgstr "LogOn with Your VKontakte account"
+
+#: RM.QuickLogOn.OAuth.RU.Providers.YandexOAuthProvider
+#| msgid "Yandex"
+msgid "Yandex"
+msgstr "Yandex"
+
+#: RM.QuickLogOn.OAuth.RU.Providers.YandexOAuthProvider
+#| msgid "LogOn with Your Yandex account"
+msgid "LogOn with Your Yandex account"
+msgstr "LogOn with Your Yandex account"
+
+#: RM.QuickLogOn.OAuth.RU.Services.MailRuOAuthService
+#| msgid "invalid code"
+msgid "invalid code"
+msgstr "invalid code"
+
+#: RM.QuickLogOn.OAuth.RU.Services.MailRuOAuthService
+#| msgid "invalid email"
+msgid "invalid email"
+msgstr "invalid email"
+
+#: RM.QuickLogOn.OAuth.RU.Services.MailRuOAuthService
+#| msgid "invalid token"
+msgid "invalid token"
+msgstr "invalid token"
+
+#: RM.QuickLogOn.OAuth.RU.Services.MailRuOAuthService
+#| msgid "LogOn through Mail.ru failed: {0}"
+msgid "LogOn through Mail.ru failed: {0}"
+msgstr "LogOn through Mail.ru failed: {0}"
+
+#: RM.QuickLogOn.OAuth.RU.Services.OdnoklassnikiOAuthService
+#| msgid "invalid code"
+msgid "invalid code"
+msgstr "invalid code"
+
+#: RM.QuickLogOn.OAuth.RU.Services.OdnoklassnikiOAuthService
+#| msgid "invalid email"
+msgid "invalid email"
+msgstr "invalid email"
+
+#: RM.QuickLogOn.OAuth.RU.Services.OdnoklassnikiOAuthService
+#| msgid "invalid token"
+msgid "invalid token"
+msgstr "invalid token"
+
+#: RM.QuickLogOn.OAuth.RU.Services.OdnoklassnikiOAuthService
+#| msgid "LogOn through Odnoklassniki failed: {0}"
+msgid "LogOn through Odnoklassniki failed: {0}"
+msgstr "LogOn through Odnoklassniki failed: {0}"
+
+#: RM.QuickLogOn.OAuth.RU.Services.VKontakteOAuthService
+#| msgid "invalid code"
+msgid "invalid code"
+msgstr "invalid code"
+
+#: RM.QuickLogOn.OAuth.RU.Services.VKontakteOAuthService
+#| msgid "invalid email"
+msgid "invalid email"
+msgstr "invalid email"
+
+#: RM.QuickLogOn.OAuth.RU.Services.VKontakteOAuthService
+#| msgid "invalid token"
+msgid "invalid token"
+msgstr "invalid token"
+
+#: RM.QuickLogOn.OAuth.RU.Services.VKontakteOAuthService
+#| msgid "LogOn through VKontakte failed: {0}"
+msgid "LogOn through VKontakte failed: {0}"
+msgstr "LogOn through VKontakte failed: {0}"
+
+#: RM.QuickLogOn.OAuth.RU.Services.YandexOAuthService
+#| msgid "invalid code"
+msgid "invalid code"
+msgstr "invalid code"
+
+#: RM.QuickLogOn.OAuth.RU.Services.YandexOAuthService
+#| msgid "invalid email"
+msgid "invalid email"
+msgstr "invalid email"
+
+#: RM.QuickLogOn.OAuth.RU.Services.YandexOAuthService
+#| msgid "invalid token"
+msgid "invalid token"
+msgstr "invalid token"
+
+#: RM.QuickLogOn.OAuth.RU.Services.YandexOAuthService
+#| msgid "LogOn through Yandex failed: {0}"
+msgid "LogOn through Yandex failed: {0}"
+msgstr "LogOn through Yandex failed: {0}"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.MailRu.SiteSettings.cshtml
+#| msgid "Mail.RU OAuth"
+msgid "Mail.RU OAuth"
+msgstr "Mail.RU OAuth"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.MailRu.SiteSettings.cshtml
+#| msgid "Setup or update existing Mail.RU app:"
+msgid "Setup or update existing Mail.RU app:"
+msgstr "Setup or update existing Mail.RU app:"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.MailRu.SiteSettings.cshtml
+#| msgid "Put callback url to Mail.RU app settings:"
+msgid "Put callback url to Mail.RU app settings:"
+msgstr "Put callback url to Mail.RU app settings:"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.MailRu.SiteSettings.cshtml
+#| msgid "Receive ClientId and ClientSecret from Mail.RU app and put them into appropriate fields below"
+msgid "Receive ClientId and ClientSecret from Mail.RU app and put them into appropriate fields below"
+msgstr "Receive ClientId and ClientSecret from Mail.RU app and put them into appropriate fields below"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.MailRu.SiteSettings.cshtml
+#| msgid "Client Id"
+msgid "Client Id"
+msgstr "Client Id"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.MailRu.SiteSettings.cshtml
+#| msgid "Enter client id."
+msgid "Enter client id."
+msgstr "Enter client id."
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.MailRu.SiteSettings.cshtml
+#| msgid "Client Secret"
+msgid "Client Secret"
+msgstr "Client Secret"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.MailRu.SiteSettings.cshtml
+#| msgid "Entre client secret to change. If empty then no change."
+msgid "Entre client secret to change. If empty then no change."
+msgstr "Entre client secret to change. If empty then no change."
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Odnoklassniki.SiteSettings.cshtml
+#| msgid "Odnoklassniki OAuth"
+msgid "Odnoklassniki OAuth"
+msgstr "Odnoklassniki OAuth"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Odnoklassniki.SiteSettings.cshtml
+#| msgid "Register as developer here:"
+msgid "Register as developer here:"
+msgstr "Register as developer here:"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Odnoklassniki.SiteSettings.cshtml
+#| msgid "Request access to OAuth here:"
+msgid "Request access to OAuth here:"
+msgstr "Request access to OAuth here:"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Odnoklassniki.SiteSettings.cshtml
+#| msgid "Receive e-mail from Odnoklassniki and follow instruction to register app"
+msgid "Receive e-mail from Odnoklassniki and follow instruction to register app"
+msgstr "Receive e-mail from Odnoklassniki and follow instruction to register app"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Odnoklassniki.SiteSettings.cshtml
+#| msgid "Put callback url to Odnoklassniki app settings:"
+msgid "Put callback url to Odnoklassniki app settings:"
+msgstr "Put callback url to Odnoklassniki app settings:"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Odnoklassniki.SiteSettings.cshtml
+#| msgid "Receive ClientId, ClientPublicId and ClientSecret from Odnoklassniki app and put them into appropriate fields below"
+msgid "Receive ClientId, ClientPublicId and ClientSecret from Odnoklassniki app and put them into appropriate fields below"
+msgstr "Receive ClientId, ClientPublicId and ClientSecret from Odnoklassniki app and put them into appropriate fields below"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Odnoklassniki.SiteSettings.cshtml
+#| msgid "Client Id"
+msgid "Client Id"
+msgstr "Client Id"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Odnoklassniki.SiteSettings.cshtml
+#| msgid "Enter client id."
+msgid "Enter client id."
+msgstr "Enter client id."
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Odnoklassniki.SiteSettings.cshtml
+#| msgid "Client Public Id"
+msgid "Client Public Id"
+msgstr "Client Public Id"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Odnoklassniki.SiteSettings.cshtml
+#| msgid "Enter client public id."
+msgid "Enter client public id."
+msgstr "Enter client public id."
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Odnoklassniki.SiteSettings.cshtml
+#| msgid "Client Secret"
+msgid "Client Secret"
+msgstr "Client Secret"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Odnoklassniki.SiteSettings.cshtml
+#| msgid "Entre client secret to change. If empty then no change."
+msgid "Entre client secret to change. If empty then no change."
+msgstr "Entre client secret to change. If empty then no change."
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.VKontakte.SiteSettings.cshtml
+#| msgid "VKontakte OAuth"
+msgid "VKontakte OAuth"
+msgstr "VKontakte OAuth"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.VKontakte.SiteSettings.cshtml
+#| msgid "Setup or update existing VKontakte app:"
+msgid "Setup or update existing VKontakte app:"
+msgstr "Setup or update existing VKontakte app:"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.VKontakte.SiteSettings.cshtml
+#| msgid "Put callback url to VKontakte app settings:"
+msgid "Put callback url to VKontakte app settings:"
+msgstr "Put callback url to VKontakte app settings:"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.VKontakte.SiteSettings.cshtml
+#| msgid "Receive ClientId and ClientSecret from VKontakte app and put them into appropriate fields below"
+msgid "Receive ClientId and ClientSecret from VKontakte app and put them into appropriate fields below"
+msgstr "Receive ClientId and ClientSecret from VKontakte app and put them into appropriate fields below"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.VKontakte.SiteSettings.cshtml
+#| msgid "Client Id"
+msgid "Client Id"
+msgstr "Client Id"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.VKontakte.SiteSettings.cshtml
+#| msgid "Enter client id."
+msgid "Enter client id."
+msgstr "Enter client id."
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.VKontakte.SiteSettings.cshtml
+#| msgid "Client Secret"
+msgid "Client Secret"
+msgstr "Client Secret"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.VKontakte.SiteSettings.cshtml
+#| msgid "Entre client secret to change. If empty then no change."
+msgid "Entre client secret to change. If empty then no change."
+msgstr "Entre client secret to change. If empty then no change."
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Yandex.SiteSettings.cshtml
+#| msgid "Yandex OAuth"
+msgid "Yandex OAuth"
+msgstr "Yandex OAuth"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Yandex.SiteSettings.cshtml
+#| msgid "Setup or update existing Yandex app:"
+msgid "Setup or update existing Yandex app:"
+msgstr "Setup or update existing Yandex app:"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Yandex.SiteSettings.cshtml
+#| msgid "Put callback url to Yandex app settings:"
+msgid "Put callback url to Yandex app settings:"
+msgstr "Put callback url to Yandex app settings:"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Yandex.SiteSettings.cshtml
+#| msgid "Receive ClientId and ClientSecret from Yandex app and put them into appropriate fields below"
+msgid "Receive ClientId and ClientSecret from Yandex app and put them into appropriate fields below"
+msgstr "Receive ClientId and ClientSecret from Yandex app and put them into appropriate fields below"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Yandex.SiteSettings.cshtml
+#| msgid "Client Id"
+msgid "Client Id"
+msgstr "Client Id"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Yandex.SiteSettings.cshtml
+#| msgid "Enter client id."
+msgid "Enter client id."
+msgstr "Enter client id."
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Yandex.SiteSettings.cshtml
+#| msgid "Client Secret"
+msgid "Client Secret"
+msgstr "Client Secret"
+
+#: ~/Modules/RM.QuickLogOn.OAuth.RU/Views/EditorTemplates/Parts.Yandex.SiteSettings.cshtml
+#| msgid "Entre client secret to change. If empty then no change."
+msgid "Entre client secret to change. If empty then no change."
+msgstr "Entre client secret to change. If empty then no change."
+

@@ -9,6 +9,7 @@ using Orchard.Environment.Extensions;
 using RM.QuickLogOn.OAuth.RU.Models;
 using RM.QuickLogOn.Providers;
 using System.Web.Mvc;
+using Orchard.Localization;
 
 namespace RM.QuickLogOn.OAuth.RU.Providers
 {
@@ -17,14 +18,16 @@ namespace RM.QuickLogOn.OAuth.RU.Providers
     {
         public const string Url = "https://oauth.yandex.ru/authorize?response_type=code&client_id={0}&state={1}";
 
+        private Localizer T = NullLocalizer.Instance;
+
         public string Name
         {
-            get { return "Yandex"; }
+            get { return T("Yandex").ToString(); }
         }
 
         public string Description
         {
-            get { return "LogOn with Your Yandex account"; }
+            get { return T("LogOn with Your Yandex account").ToString(); }
         }
 
         public string GetLogOnUrl(WorkContext context)

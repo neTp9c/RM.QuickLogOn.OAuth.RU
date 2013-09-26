@@ -1,19 +1,29 @@
 ﻿@model RM.QuickLogOn.OAuth.RU.Models.OdnoklassnikiSettingsPart
 @using Orchard.Utility.Extensions;
-
+@{
+    var baseUri = new Uri(WorkContext.CurrentSite.BaseUrl);
+    var callbackUrl = new Uri(baseUri, Url.Action("Auth", "OdnoklassnikiOAuth", new { area = "RM.QuickLogOn.OAuth.RU" })).ToString();
+ }
 <fieldset>
     <legend>@T("Odnoklassniki OAuth")</legend>
+    <ol style="list-style-type: decimal;padding-left: 20px;">
+        <li>@T("Register as developer here:")&nbsp;<a href="http://apiok.ru/wiki/pages/viewpage.action?pageId=5668937">http://apiok.ru/wiki/pages/viewpage.action?pageId=5668937</a></li>
+        <li>@T("Request access to OAuth here:")&nbsp;<a href="http://apiok.ru/wiki/pages/viewpage.action?pageId=13992188">http://apiok.ru/wiki/pages/viewpage.action?pageId=13992188</a></li>
+        <li>@T("Receive e-mail from Odnoklassniki and follow instruction to register app")</li>
+        <li>@T("Put callback url to Odnoklassniki app settings:")&nbsp;@Html.Link(callbackUrl, callbackUrl)</li>
+        <li>@T("Receive ClientId, ClientPublicId and ClientSecret from Odnoklassniki app and put them into appropriate fields below")</li>
+    </ol>
     <div>
         <label for="@Html.FieldIdFor(m => m.ClientId)">@T("Client Id")</label>
         @Html.TextBoxFor(m=>m.ClientId)
         @Html.ValidationMessage("ClientId", "*")
-        <span class="hint">@T("You have to create Odnoklassniki app to get ClientId.")&nbsp;<a href="https://code.google.com/apis/console">https://code.google.com/apis/console</a></span>
+        <span class="hint">@T("Enter client id.")</span>
     </div>
     <div>
         <label for="@Html.FieldIdFor(m => m.ClientPublicId)">@T("Client Public Id")</label>
         @Html.TextBoxFor(m=>m.ClientPublicId)
         @Html.ValidationMessage("ClientPublicId", "*")
-        <span class="hint">@T("You have to create Odnoklassniki app to get ClientPublicId.")</span>
+        <span class="hint">@T("Enter client public id.")</span>
     </div>
     <div>
         <label for="@Html.FieldIdFor(m => m.ClientSecret)">@T("Client Secret")</label>

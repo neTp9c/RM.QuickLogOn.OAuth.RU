@@ -9,6 +9,7 @@ using Orchard.Environment.Extensions;
 using RM.QuickLogOn.OAuth.RU.Models;
 using RM.QuickLogOn.Providers;
 using System.Web.Mvc;
+using Orchard.Localization;
 
 namespace RM.QuickLogOn.OAuth.RU.Providers
 {
@@ -17,14 +18,16 @@ namespace RM.QuickLogOn.OAuth.RU.Providers
     {
         public const string Url = "https://connect.mail.ru/oauth/authorize?client_id={0}&response_type=code&redirect_uri={1}";
 
+        private Localizer T = NullLocalizer.Instance;
+
         public string Name
         {
-            get { return "MailRu"; }
+            get { return T("MailRu").ToString(); }
         }
 
         public string Description
         {
-            get { return "LogOn with Your Mail.RU account"; }
+            get { return T("LogOn with Your Mail.RU account").ToString(); }
         }
 
         public string GetLogOnUrl(WorkContext context)
